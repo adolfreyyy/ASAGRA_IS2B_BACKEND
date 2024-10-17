@@ -16,7 +16,7 @@ const getDepartmentById = async (req, res) => {
     try {
         const [rows] = await pool.query('SELECT * FROM departments WHERE dept_id = ?', [id]);
         if (rows.length === 0) {
-            return res.status(404).json({ error: 'Deparment not found '});
+            return res.status(404).json({ error: 'Department not found '});
         }
         res.json(rows[0]);
     }catch (err) {
